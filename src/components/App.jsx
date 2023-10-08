@@ -23,8 +23,8 @@ function App() {
       <ContactForm />
       {isLoading && <Loader />}
       {isError &&
-        toast.error(`&{isError.message}`, {
-          icon: '👈',
+        toast.error('Error please try one more time', {
+          icon: '🚨',
         })}
       <Filter />
       <ContactList />
