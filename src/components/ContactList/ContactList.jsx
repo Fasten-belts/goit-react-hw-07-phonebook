@@ -7,7 +7,7 @@ import {
   DeleteButton,
 } from './ContactList.styled';
 import { selectVisibleContacts } from 'redux/selectors';
-import { delNumber } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const ContactList = () => {
         <ContactListItem key={id}>
           <ContactName>{name}:</ContactName>{' '}
           <ContactNumber>{number}</ContactNumber>
-          <DeleteButton onClick={() => dispatch(delNumber(id))}>
+          <DeleteButton onClick={() => dispatch(deleteContact(id))}>
             Delete
           </DeleteButton>
         </ContactListItem>

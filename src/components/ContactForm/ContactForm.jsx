@@ -9,7 +9,7 @@ import {
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
-import { addNumber } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 
 const FormSchema = Yup.object().shape({
   name: Yup.string()
@@ -45,7 +45,7 @@ export const ContactForm = () => {
       return alert(`${values.name} or ${values.number}is already in contacts.`);
     }
 
-    dispatch(addNumber(values));
+    dispatch(addContact(values));
     action.resetForm();
   };
 
